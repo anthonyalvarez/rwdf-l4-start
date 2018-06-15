@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html data-ember-extension="1" class="gr__udacity_github_io" lang="en"><style></style><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="off-canvas_files/default-styles.css">
+    <link rel="stylesheet" type="text/css" href="off-canvas_files/menu-styles.css">
+    <!-- <script type="application/javascript" src="./off-canvas_files/app.js"></script> -->
+  </head>
+  
+  <body data-gr-c-s-loaded="true">
+    <nav id="drawer" class="dark_blue">
+      <h2>Off Canvas</h2>
+      <p>Click outside the drawer to close</p>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#">News</a></li>
+        <li class="nav__item"><a href="#">Events</a></li>
+        <li class="nav__item"><a href="#">Culture</a></li>
+        <li class="nav__item"><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+
+    <main class="light_blue">
+        <header class="header">
+            <div class="header__inner">
+              <img class="header__logo" src="../Start/images/city.png" alt="iconic view of a cityscape">
+              <h1 class="header__title">
+                The Brighton Times
+              </h1>
+              <a id="menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+                  </svg>
+                </a>
+                <p>Click on the menu icon to open the drawer</p>
+            </div>
+          </header>
+      
+    </main>
+</body>
+</html>
+
+<script>
+/*
+ * Open the drawer when the menu icon is clicked.
+ */
+var menu = document.querySelector('#menu');
+var main = document.querySelector('main');
+var drawer = document.querySelector('#drawer');
+
+menu.addEventListener('click', function(e) {
+  drawer.classList.toggle('open');
+  e.stopPropagation();
+});
+main.addEventListener('click', function() {
+  drawer.classList.remove('open');
+});
+</script>
