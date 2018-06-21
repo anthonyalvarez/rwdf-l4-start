@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="off-canvas_files/default-styles.css">
     <link rel="stylesheet" type="text/css" href="off-canvas_files/menu-styles.css">
     <!-- <script type="application/javascript" src="./off-canvas_files/app.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 </head>
 
 <body data-gr-c-s-loaded="true">
@@ -32,9 +33,12 @@
                     The Brighton Times
                 </h1>
                 <a id="menu" class="header__menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
-                  </svg>
+                  </svg> -->
+                  <!-- ☰ -->
+                  
+                  <i class="fas fa-bars"></i>
                 </a>
                 <!-- <p>Click on the menu icon to open the drawer</p> -->
             </div>
@@ -55,6 +59,7 @@
 
     menu.addEventListener('click', function(e) {
         drawer.classList.toggle('open');
+
         e.stopPropagation();
     });
     main.addEventListener('click', function() {

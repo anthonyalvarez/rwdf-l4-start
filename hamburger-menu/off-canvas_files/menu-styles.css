@@ -21,26 +21,33 @@
       }
       
       .header {
-          background-color: orangered;
+          
       }
       
       .header__inner {
           display: flex;
           align-items: center;
+          flex-flow: row nowrap;
+          
       }
       
       .header__logo {
           order: 1;
           height: 50px;
+          border: 1px solid yellow;
       }
       
       .header__title {
           order: 2;
+          font-size: 1.0em;
+          /* flex: 1; */
+          flex-grow: 2;
+          border: 1px dashed red;
       }
       
       .header__menu {
           order: 3;
-          height: 50px;
+          border: 1px solid white;
       }
       /*
        * Off-canvas layout styles.
