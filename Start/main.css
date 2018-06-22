@@ -61,53 +61,37 @@ ul {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
     min-height: 56px;
     transition: min-height 0.3s;
-    /* Additions 2018-06-14 */
-    border-style: solid;
-    border-width: 2px;
-    border-color: red;
-    display: flex;
-    align-items: center;
 }
 
 .header__inner {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    /* Additions 2018-06-14 */
-    background-color: greenyellow;
+    display: flex;
     align-items: center;
+    flex-flow: row nowrap;
 }
 
 .header__logo {
     margin-right: 1em;
-    /* Additions 2018-06-14 */
-    background-color: red;
-    order: 2;
+    order: 1;
     height: 50px;
-    flex: 1;
-    /* margin-top: 0px; */
-    /* margin-top: 12px; */
-    /* height: 72px; */
-    /* vertical-align: top; */
 }
 
 .header__title {
     color: #212121;
-    /* Additions 2018-06-14 */
-    /* margin: 0.5em 0.25em; */
     margin: 0 auto;
-    background-color: pink;
-    flex: 2;
-    /* margin: auto; */
-    display: inline-block;
     font-size: 2em;
     font-weight: normal;
-    order: 1;
-    /* font-weight: 300; */
-    /* font-size: 4em; */
-    /* display: inline-block; */
+    order: 2;
+    font-size: 1.5em;
+    flex-grow: 2;
 }
 
+.header__menu {
+    order: 3;
+    border: 1px dashed red;
+}
 
 /*
  *
@@ -127,13 +111,13 @@ a#menu svg {
     fill: #000;
 }
 
-.nav__list {
+/* .nav__list {
     width: 100%;
     padding: 0;
     margin: 0;
 }
-
-.nav__item {
+ */
+/* .nav__item {
     box-sizing: border-box;
     display: inline-block;
     width: 24%;
@@ -142,7 +126,7 @@ a#menu svg {
     padding: 24px;
     text-transform: uppercase;
 }
-
+ */
 .nav a {
     text-decoration: none;
     color: #616161;
@@ -176,7 +160,7 @@ main {
  */
 
 .content {
-    background-color: purple;
+    /* background-color: purple; */
 }
 
 
@@ -413,60 +397,91 @@ footer a {
     padding: 1.5em;
 }
 
+ /*
+       * Off-canvas layout styles.
+       */
+      /* Since we're mobile-first, by default, the drawer is hidden. */
+      
+      nav {
+        width: 300px;
+        height: 100%;
+        position: absolute;
+        /* This trasform moves the drawer off canvas. */
+        -webkit-transform: translate(-300px, 0);
+        transform: translate(-300px, 0);
+        /* Optionally, we animate the drawer. */
+        transition: transform 0.3s ease;
+    }
+    
+    nav.open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
 
-/*
- *
- * Media Queries using min-width and max-width
- * Date: 2018-06-14
- * 
- */
-
-@media screen and (min-width: 450px) {}
 
 
-/* 
+      
+@media screen and (min-width: 450px) {
 
-Off canvas layout styles
-
- */
-
-
-/* If there is enough space (> 600px), we keep the drawer open all the time. */
-
-@media screen and (min-width: 600px) {
     .nav {
-        /* display: inline;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto; */
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .nav__list {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .nav__item {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 24%;
+        text-align: center;
+        line-height: 24px;
+        padding: 24px;
+        text-transform: uppercase;
+      }
+      
+      .nav a {
+        text-decoration: none;
+        color: #616161;
+        padding: 1.5em;
+      }
+      
+      .nav a:hover {
+        text-decoration: underline;
+        color: #212121;
+      }
+
+
+    /* We open the drawer. */
+    /* nav {
         position: relative;
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
     }
+    /* We use Flexbox on the parent. */
     body {
-        display: flex;
         display: -webkit-flex;
-        flex-flow: row nowrap;
-        -webkit-flex-flow: row nowrap;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
     }
     main {
         width: auto;
         /* Flex-grow streches the main content to fill all available space. */
-        flex-grow: 1;
+        /* flex-grow: 1; */
+    } 
+    
+    #menu {
+        display: hidden;
     }
-}
 
-@media screen and (min-width: 800px) {}
-
-img,
-embed,
-object,
-video {
-    max-width: 100%;
-}
-
-nav a,
-button {
-    min-width: 48px;
-    min-height: 48px;
+    .header__menu {
+        display: hidden;
+    }
 }
